@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let newPost = document.createElement('journal-entry');
         newPost.entry = entry;
         newPost.num = counter;
+        newPost.id = 'entry ' + String(counter);
         newPost.addEventListener('click',() => {
           setState({location: 'entry', entryNum: newPost.num});
         });
