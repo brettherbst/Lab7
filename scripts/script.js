@@ -23,7 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
         counter++;
       });
     });
+
+  registerSW();
 });
+
+function registerSW() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', (event) => {
+        navigator.serviceWorker.register('../sw.js')
+          .then((registration) => {
+            console.log('sw registration complete: ' + registration.scope);
+          },
+          (err) => {
+            console.error('sw registration failed: ' + err);
+          });
+    });
+  }
+}
 
 // IMPLEMENTS SETTINGS BUTTON
 document.querySelector('header img').addEventListener('click', () => {
