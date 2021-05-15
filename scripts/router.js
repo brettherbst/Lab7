@@ -65,7 +65,7 @@ router.setState = function(state) {
     body.className = 'single-entry';
     header.innerHTML = 'Entry ' + state.entryNum;
     let thisEntry = document.createElement('entry-page');
-    thisEntry.entry = document.getElementById(state.entryNum).entry;
+    thisEntry.entry = document.getElementById('entry ' + String(state.entryNum)).entry;
     body.removeChild(document.getElementsByTagName('entry-page')[0]);
     body.appendChild(thisEntry);
     console.log(JSON.stringify(state) + '#entry' + state.entryNum)
