@@ -68,7 +68,7 @@ router.setState = function(state) {
     thisEntry.entry = document.getElementById('entry ' + String(state.entryNum)).entry;
     body.removeChild(document.getElementsByTagName('entry-page')[0]);
     body.appendChild(thisEntry);
-    console.log(JSON.stringify(state) + '#entry' + state.entryNum)
+    console.log(JSON.stringify(state) + '#entry' + state.entryNum);
     history.pushState(state, '', '#entry' + state.entryNum);
 
   }

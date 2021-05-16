@@ -13,8 +13,12 @@ let urlsToCache = [
     'style.css',
     'settings.svg',
     'components/entry-page.js',
-    'components/journal-entry.js'
+    'components/journal-entry.js',
+    'scripts/router.js',
+    'scripts/script.js',
+    'https://cse110lab6.herokuapp.com/entries'
 ];
+// const urlsToCache = ['https://cse110lab6.herokuapp.com/entries'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -38,6 +42,12 @@ self.addEventListener('fetch', (event) => {
 
                 console.log('Cache miss.');
                 return fetch(event.request);
+                    // .then((response) => {
+                    //     caches.open(CACHE_NAME)
+                    //         .then((cache) => {
+                    //             cache.put(event.request, response.clone());
+                    //         });
+                    // });
             })
     );
 });
