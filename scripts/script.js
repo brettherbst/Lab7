@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function registerSW() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', (event) => {
-        navigator.serviceWorker.register('../sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then((registration) => {
             console.log('sw registration complete: ' + registration.scope);
           },
